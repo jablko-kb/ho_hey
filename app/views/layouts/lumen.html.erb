@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ho！ Hey！</title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "lumen", :media => "all" %>
+    <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <div class="page-header" id="banner">
+        <div class="bs-docs-section">
+          <%= render 'layouts/title', object: :title %>
+          <%= render 'shared/flash_messages', object: flash %>
+          <%= yield %>
+          <%= render 'layouts/footer' %>
+          <%= debug(params) if Rails.env.development? %>
+        </div>
+      </div>
+  </body>
+</html>

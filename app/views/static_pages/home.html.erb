@@ -1,0 +1,8 @@
+<% if signed_in? %>
+  <% provide(:title, "ホーム") %>
+  <%= render 'shared/micropost_form' %>
+  <%= render 'shared/feed' %>
+<% else %>
+  <% provide(:title, "ログイン") %>
+  <%= render 'static_pages/login' %>
+<% end %>

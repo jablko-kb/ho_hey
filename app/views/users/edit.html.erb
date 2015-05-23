@@ -1,0 +1,39 @@
+<% provide(:title, "ユーザーの更新") %>
+<div class="col-lg-6">
+  <div class="well bs-component">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <fieldset>
+        <div class="form-group">
+          <%= f.label :name, "名前", class: "col-lg-2 control-label"  %>
+          <div class="col-lg-10">
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, "メールアドレス", class: "col-lg-2 control-label"  %>
+          <div class="col-lg-10">
+            <%= f.text_field :email, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, "パスワード", class: "col-lg-2 control-label"  %>
+          <div class="col-lg-10">
+            <%= f.password_field :password, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, "パスワード（確認用）", class: "col-lg-2 control-label"  %>
+          <div class="col-lg-10">
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <%= f.submit "更新", class: "btn btn-large btn-primary" %>
+          </div>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

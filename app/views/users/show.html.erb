@@ -1,0 +1,15 @@
+<% provide(:title, "プロフィール") %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h3>名前：<%= @user.name %></h3>
+    <p>メールアドレス：<%= @user.email %></p>
+    <p><%= link_to "変更する", edit_user_path(current_user) %></p>
+  </div>
+</div>
+
+<% if @user.microposts.any? %>
+  <h3>Microposts (<%= @user.microposts.count %>)</h3>
+  <%= render @microposts %>
+  <%= will_paginate @microposts %>
+<% end %>

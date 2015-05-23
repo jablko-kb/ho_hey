@@ -1,0 +1,13 @@
+<div class="bs-component">
+  <%= link_to micropost.user.name, micropost.user %>が
+  <%= time_ago_in_words(micropost.created_at) %>前に投稿
+  <% if current_user?(micropost.user) %>
+    <%= link_to "削除", micropost, method: :delete,
+                         data: { confirm: "よろしいですか?" },
+                         title: micropost.content %>
+      
+  <% end %>
+  <blockquote>
+    <p><%= markdown micropost.content %></p>
+  </blockquote>
+</div>

@@ -1,0 +1,24 @@
+<% provide(:title, 'Sign up') %>
+<h1>ユーザーの作成</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name, "名前" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "パスワード（確認用）" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "ユーザを作成する", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

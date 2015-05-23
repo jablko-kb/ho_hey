@@ -1,0 +1,16 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to "Ho！ Hey！", root_path, class: "navbar-brand" %>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav navbar-right">
+          <% if signed_in? %>
+            <li><%= link_to "ユーザ一覧", users_path %></li>
+            <li><%= link_to "プロフィール", current_user %></li>
+            <li><%= link_to "ログアウト", signout_path, method: "delete" %></li>
+          <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
