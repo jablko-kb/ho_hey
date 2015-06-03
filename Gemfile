@@ -10,7 +10,6 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem "redcarpet", "~> 2.3.0"
-gem 'execjs'
 gem 'less-rails'
 gem 'therubyracer' 
 gem 'twitter-bootswatch-rails', '~> 3.1.1'

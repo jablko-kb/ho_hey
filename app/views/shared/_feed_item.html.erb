@@ -7,7 +7,5 @@
                          title: feed_item.content %>
       
   <% end %>
-  <blockquote>
-    <p><%= markdown feed_item.content %></p>
-  </blockquote>
+    <p><%=  simple_format(markdown(feed_item.content)) %></p>
 </div>
