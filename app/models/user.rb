@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
+  has_and_belongs_to_many :groups
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token
